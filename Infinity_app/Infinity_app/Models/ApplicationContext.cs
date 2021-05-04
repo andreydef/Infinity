@@ -24,7 +24,6 @@ namespace Infinity_app.Models
         public DbSet<Info_jobs> Info_jobs { get; set; }
         public DbSet<Contact_me> Contact_me { get; set; }
         public DbSet<Contact_info> Contact_info { get; set; }
-        public DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -250,25 +249,6 @@ namespace Infinity_app.Models
                     Link_github = "https://github.com/andreydef",
                     Link_instagram = "https://www.instagram.com/_andriy_halelyuka_/",
                     Link_twitter = "https://twitter.com/Andriy346"
-                }
-            });
-            modelBuilder.Entity<User>().HasData(new User[]
-            {
-                new User
-                {
-                    Id = 1,
-                    UserName = "anreydef",
-                    FirstName = "Andriy",
-                    Password = "a30072001",
-                    UserType = "User"
-                },
-                new User
-                {
-                    Id = 2,
-                    UserName = "admin",
-                    FirstName = "danger",
-                    Password = "pass",
-                    UserType = "Admin"
                 }
             });
         }
