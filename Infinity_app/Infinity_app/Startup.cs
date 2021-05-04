@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Infinity_app.Models;
 
 namespace Infinity_app
 {
@@ -18,6 +20,11 @@ namespace Infinity_app
 
         public void ConfigureServices(IServiceCollection services)
         {
+            string connectionString = "Data Source=DESKTOP-3FJ8FKE;Initial Catalog=Portfolio;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
+
+            // services.AddControllers();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddSpaStaticFiles(configuration =>
