@@ -24,6 +24,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,6 +40,12 @@
     <Compile Remove="Migrations\20210504144320_Initial.Designer.cs" />
     <Compile Remove="Migrations\20210504150237_Initial.cs" />
     <Compile Remove="Migrations\20210504150237_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20210504150628_First.cs" />
+    <Compile Remove="Migrations\20210504150628_First.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

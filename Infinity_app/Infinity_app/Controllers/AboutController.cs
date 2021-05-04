@@ -6,8 +6,8 @@ using Infinity_app.Models;
 
 namespace Infinity_app.Controllers
 {
-    [ApiController]
     [Route("api/about")]
+    [ApiController]
     public class AboutController : Controller
     {
         ApplicationContext db;
@@ -53,17 +53,17 @@ namespace Infinity_app.Controllers
             return about;
         }
 
-        [HttpPost]
-        public IActionResult Post(About about)
-        {
-            if (ModelState.IsValid)
-            {
-                db.About.Add(about);
-                db.SaveChanges();
-                return Ok(about);
-            }
-            return BadRequest(ModelState);
-        }
+        //[HttpPost]
+        //public IActionResult Post(About about)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.About.Add(about);
+        //        db.SaveChanges();
+        //        return Ok(about);
+        //    }
+        //    return BadRequest(ModelState);
+        //}
 
         [HttpPut]
         public IActionResult Put(About about)
@@ -77,17 +77,17 @@ namespace Infinity_app.Controllers
             return BadRequest(ModelState);
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            About about = db.About.FirstOrDefault(x => x.Id == id);
+        //[HttpDelete("{id}")]
+        //public IActionResult Delete(int id)
+        //{
+        //    About about = db.About.FirstOrDefault(x => x.Id == id);
 
-            if (about != null)
-            {
-                db.About.Remove(about);
-                db.SaveChanges();
-            }
-            return Ok(about);
-        }
+        //    if (about != null)
+        //    {
+        //        db.About.Remove(about);
+        //        db.SaveChanges();
+        //    }
+        //    return Ok(about);
+        //}
     }
 }
