@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Infinity_app.Models
 {
@@ -26,7 +26,7 @@ namespace Infinity_app.Models
         public string FullName { get; set; }
 
         [Required]
-        public string Birth_date { get; set; }
+        public DateTime Birth_date { get; set; }
 
         [Required]
         public string Job { get; set; }
@@ -39,8 +39,5 @@ namespace Infinity_app.Models
 
         [Required]
         public string Skills_desc { get; set; }
-
-        [ForeignKey("Skill_key")]
-        public int Skill_key { get; set; }
     }
 }
