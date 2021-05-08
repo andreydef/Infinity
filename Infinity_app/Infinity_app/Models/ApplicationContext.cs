@@ -14,9 +14,6 @@ namespace Infinity_app.Models
         public DbSet<About> About { get; set; }
         public DbSet<Languages> Languages { get; set; }
         public DbSet<Tags> Tags { get; set; }
-        public DbSet<Resume> Resume { get; set; }
-        public DbSet<Work_Experience> Work_Experience { get; set; }
-        public DbSet<Education> Education { get; set; }
         public DbSet<Main_info> Main_info { get; set; }
         public DbSet<Projects> Projects { get; set; }
         public DbSet<Services> Services { get; set; }
@@ -87,57 +84,6 @@ namespace Infinity_app.Models
                 {
                     Id = 2,
                     Title = "Bank"
-                }
-            });
-            modelBuilder.Entity<Resume>().HasData(new Resume[]
-            {
-                new Resume
-                {
-                    Id = 1,
-                    Title = "More of my credentials.",
-                    Description = "Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do."
-                }
-            });
-            modelBuilder.Entity<Work_Experience>().HasData(new Work_Experience[]
-            {
-                new Work_Experience
-                {
-                    Id = 1,
-                    Name_job = "UI Designer",
-                    Date_start = new DateTime(2015, 07, 05),
-                    Date_finish = DateTime.Now,
-                    Title_job = "Awesome Studio",
-                    Description = "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi."
-                },
-                new Work_Experience
-                {
-                    Id = 2,
-                    Name_job = "Front-end Developer",
-                    Date_start =  new DateTime(2014, 07, 25),
-                    Date_finish = new DateTime(2019, 04, 15),
-                    Title_job = "Super Cool Agency",
-                    Description = "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt."
-                }
-            });
-            modelBuilder.Entity<Education>().HasData(new Education[]
-            {
-                new Education
-                {
-                    Id = 1,
-                    Name_education = "Master Degree",
-                    Date_start = new DateTime(2017, 05, 07),
-                    Date_finish = DateTime.Now,
-                    Title_place = "State Design University",
-                    Description = "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt."
-                },
-                new Education
-                {
-                    Id = 2,
-                    Name_education = "Bachelor Degree",
-                    Date_start = new DateTime(2014, 05, 07),
-                    Date_finish = new DateTime(2019, 05, 04),
-                    Title_place = "University of Life",
-                    Description = "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt."
                 }
             });
             modelBuilder.Entity<Main_info>().HasData(new Main_info[]
