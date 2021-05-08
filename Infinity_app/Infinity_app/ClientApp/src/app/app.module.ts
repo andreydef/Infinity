@@ -29,6 +29,6 @@ import { ServicesComponent } from './components/services/services.component';
     ])
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

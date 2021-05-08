@@ -80,7 +80,6 @@ namespace Infinity_app
                 {
                     spa.UseAngularCliServer(npmScript: "start");
                 }
-
                 spa.Options.StartupTimeout = new TimeSpan(0, 5, 0);
             });
         }
