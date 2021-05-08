@@ -1,28 +1,24 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Infinity_app.Models.Main_models
+namespace Infinity_app.Models
 {
-    public class Education
+    public class Services
     {
         [Key]
         public int Id { get; set; }
 
-        [Required]
         [StringLength(maximumLength: 40, ErrorMessage = "Максимальна довжина введеної стрічки - 40 символів")]
         [MaxLength(40)]
-        public string Name_education { get; set; }
+        public string Title { get; set; }
 
-        [Required]
-        public DateTime Date_start { get; set; }
+        public string Short_desc { get; set; }
 
-        [Required]
-        public DateTime Date_finish { get; set; }
+        public string ImageName { get; set; }
 
         [Required]
         [StringLength(maximumLength: 40, ErrorMessage = "Максимальна довжина введеної стрічки - 40 символів")]
         [MaxLength(40)]
-        public string Title_place { get; set; }
+        public string Title_service { get; set; }
 
         public string Description { get; set; }
     }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Infinity_app.Models.Main_models
+namespace Infinity_app.Models
 {
     public class Work_Experience
     {

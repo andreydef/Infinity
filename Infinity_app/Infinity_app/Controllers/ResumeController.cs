@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Internal;
 using System.Collections.Generic;
 using System.Linq;
 using Infinity_app.Models;
-using Infinity_app.Models.Main_models;
 
 namespace Infinity_app.Controllers
 {
@@ -13,26 +11,7 @@ namespace Infinity_app.Controllers
     {
         ApplicationContext db;
 
-        public ResumeController(ApplicationContext context)
-        {
-            db = context;
-            if (!db.Resume.Any())
-            {
-                db.Resume.Add(
-                    new Resume
-                    {
-                        Id = 1,
-                        Title = "More of my credentials.",
-                        Description = "Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do."
-                    }
-                    );
-                db.SaveChanges();
-            }
-            else
-            {
-                db.Resume.ToList();
-            }
-        }
+        public ResumeController(ApplicationContext context) { }
 
         [HttpGet]
         public IEnumerable<Resume> Get()

@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Internal;
 using System.Collections.Generic;
 using System.Linq;
 using Infinity_app.Models;
-using Infinity_app.Models.Main_models;
 
 namespace Infinity_app.Controllers
 {
@@ -13,38 +11,7 @@ namespace Infinity_app.Controllers
     {
         ApplicationContext db;
 
-        public InfoJobsController(ApplicationContext context)
-        {
-            db = context;
-            if (!db.Info_jobs.Any())
-            {
-                db.Info_jobs.AddRange(
-                    new Info_jobs
-                    {
-                        Id = 1,
-                        Numbers = 1500,
-                        Title = "PROJECTS COMPLETED"
-                    },
-                    new Info_jobs
-                    {
-                        Id = 2,
-                        Numbers = 900,
-                        Title = "HAPPY CLIENTS"
-                    },
-                    new Info_jobs
-                    {
-                        Id = 3,
-                        Numbers = 200,
-                        Title = "AWARDS RECEIVED"
-                    }
-                    );
-                db.SaveChanges();
-            }
-            else
-            {
-                db.Info_jobs.ToList();
-            }
-        }
+        public InfoJobsController() { }
 
         [HttpGet]
         public IEnumerable<Info_jobs> Get()

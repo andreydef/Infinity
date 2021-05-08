@@ -1,10 +1,7 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Internal;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using Infinity_app.Models;
-using Infinity_app.Models.Main_models;
 
 namespace Infinity_app.Controllers
 {
@@ -14,34 +11,7 @@ namespace Infinity_app.Controllers
     {
         ApplicationContext db;
 
-        public ProjectsController(ApplicationContext context)
-        {
-            db = context;
-            if (!db.Projects.Any())
-            {
-                db.Projects.AddRange(
-                     new Projects
-                     {
-                         Id = 1,
-                         Title = "my latest works",
-                         Description = "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere",
-                         Name_project = "Website Contrast",
-                         Date_project = new DateTime(2020, 05, 15)
-                     },
-                     new Projects
-                     {
-                         Id = 2,
-                         Name_project = "Banking_system",
-                         Date_project = new DateTime(2020, 06, 05)
-                     }
-                    );
-                db.SaveChanges();
-            }
-            else
-            {
-                db.Projects.ToList();
-            }
-        }
+        public ProjectsController() { }
 
         [HttpGet]
         public IEnumerable<Projects> Get()
