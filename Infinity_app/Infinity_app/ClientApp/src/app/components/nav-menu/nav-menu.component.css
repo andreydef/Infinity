@@ -1,9 +1,5 @@
-/**
- * ===================================================================
- * header styles
- *
- * -------------------------------------------------------------------
- */
+@import url("../../../assets/css/base.css");
+@import url("../../../assets/css/main.css");
 
 header {
   position: fixed;
@@ -47,7 +43,7 @@ header .logo a {
   background-image: url("../../../assets/images/logo.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 46px 15px;
+  background-size: 30px 15px;
 }
 
 

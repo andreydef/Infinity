@@ -1,76 +1,75 @@
-<h1>Список Abouts</h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <td>Title</td>
-      <td>ImageName</td>
-      <td>Description</td>
-      <td>Profile_desc</td>
-      <td>FullName</td>
-      <td>Birth_date</td>
-      <td>Job</td>
-      <td>Website</td>
-      <td>Email</td>
-      <td>Skills_desc</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let a of abouts">
-      <ng-template [ngIf]="about?.id != a.id" [ngIfElse]="edit">
-        <td>{{a?.title}}</td>
-        <td>{{a?.imageName}}</td>
-        <td>{{a?.description}}</td>
-        <td>{{a?.profile_desc}}</td>
-        <td>{{a?.fullname}}</td>
-        <td>{{a?.birth_date}}</td>
-        <td>{{a?.job}}</td>
-        <td>{{a?.website}}</td>
-        <td>{{a?.email}}</td>
-        <td>{{a?.skills_desc}}</td>
-        <!-- <td> -->
-        <!-- <button class="btn btn-primary" (click)="editAbout(a)">Змінити</button> -->
-        <!-- </td> -->
-      </ng-template>
-    </tr>
-  </tbody>
-</table>
+<section id="about" *ngFor="let a of abouts">
+  <div class="row section-intro">
+    <div class="col-twelve">
+      <h5>About</h5>
+      <h1>{{a?.title}}</h1>
+      <div class="intro-info">
+        <img src="../../../assets/images/profile-pic.jpg" alt="Profile Picture">
+        <p class="lead">{{a?.description}}</p>
+      </div>
+    </div>
+  </div>
 
-<!-- template for editing -->
-<ng-template #edit>
-  <td>
-    <input type="text" [(ngModel)]="about.title" class="form-control" />
-  </td>
-  <td>
-    <input type="text" [(ngModel)]="about.imageName" class="form-control" />
-  </td>
-  <td>
-    <input type="text" [(ngModel)]="about.description" class="form-control" />
-  </td>
-  <td>
-    <input type="text" [(ngModel)]="about.profile_desc" class="form-control" />
-  </td>
-  <td>
-    <input type="text" [(ngModel)]="about.fullname" class="form-control" />
-  </td>
-  <td>
-    <input type="text" [(ngModel)]="about.birth_date" class="form-control" />
-  </td>
-  <td>
-    <input type="text" [(ngModel)]="about.job" class="form-control" />
-  </td>
-  <td>
-    <input type="text" [(ngModel)]="about.website" class="form-control" />
-  </td>
-  <td>
-    <input type="text" [(ngModel)]="about.email" class="form-control" />
-  </td>
-  <td>
-    <input type="text" [(ngModel)]="about.skills_desc" class="form-control" />
-  </td>
-  <!-- <td> -->
-  <!-- <input type="button" value="Save" (click)="save()" class="btn btn-sm -->
-  <!-- btn-success" /> -->
-  <!-- <input type="button" value="Cancel" (click)="cancel()" class="btn btn-sm -->
-  <!-- btn-warning" /> -->
-  <!-- </td> -->
-</ng-template>
+  <div class="row about-content">
+    <div class="col-six tab-full">
+      <h3>Profile</h3>
+      <p>{{a?.profile_desc}}</p>
+      <ul class="info-list">
+        <li>
+          <strong>Fullname:</strong>
+          <span>{{a?.fullname}}</span>
+        </li>
+        <li>
+          <strong>Birth Date:</strong>
+          <span>{{a?.birth_date | date: 'MMM dd, yyyy'}}</span>
+        </li>
+        <li>
+          <strong>Job:</strong>
+          <span>{{a?.job}}</span>
+        </li>
+        <li>
+          <strong>Website:</strong>
+          <span>{{a?.website}}</span>
+        </li>
+        <li>
+          <strong>Email:</strong>
+          <span>{{a?.email}}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-six tab-full">
+      <h3>Skills</h3>
+      <p>{{a?.skills_desc}}</p>
+      <ul class="skill-bars">
+        <li>
+          <div class="progress percent90"><span>90%</span></div>
+          <strong>HTML5</strong>
+        </li>
+        <li>
+          <div class="progress percent85"><span>85%</span></div>
+          <strong>CSS3</strong>
+        </li>
+        <li>
+          <div class="progress percent70"><span>70%</span></div>
+          <strong>JQuery</strong>
+        </li>
+        <li>
+          <div class="progress percent95"><span>95%</span></div>
+          <strong>PHP</strong>
+        </li>
+        <li>
+          <div class="progress percent75"><span>75%</span></div>
+          <strong>Wordpress</strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row button-section">
+    <div class="col-twelve">
+      <a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a>
+      <a href="#" title="Download CV" class="button button-primary">Download CV</a>
+    </div>
+  </div>
+</section>
