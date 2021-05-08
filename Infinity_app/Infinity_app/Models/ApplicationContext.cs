@@ -20,7 +20,6 @@ namespace Infinity_app.Models
         public DbSet<Main_info> Main_info { get; set; }
         public DbSet<Projects> Projects { get; set; }
         public DbSet<Services> Services { get; set; }
-        public DbSet<Info_jobs> Info_jobs { get; set; }
         public DbSet<Contact_me> Contact_me { get; set; }
         public DbSet<Contact_info> Contact_info { get; set; }
         public DbSet<Stats> Stats { get; set; }

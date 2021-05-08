@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Internal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Infinity_app.Models;
@@ -11,7 +13,33 @@ namespace Infinity_app.Controllers
     {
         ApplicationContext db;
 
-        public ProjectsController() { }
+        public ProjectsController(ApplicationContext context)
+        {
+            db = context;
+            if (!db.Projects.Any())
+            {
+                db.Projects.AddRange(
+                     new Projects
+                     {
+                         Id = 1,
+                         Title = "Website Contrast",
+                         Description = "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere",
+                         Name_project = "Contrast",
+                         Date_project = new DateTime(2020, 05, 15)
+                     },
+                     new Projects
+                     {
+                         Id = 2,
+                         Name_project = "Banking_system",
+                         Date_project = new DateTime(2020, 06, 05)
+                     });
+                db.SaveChanges();
+            }
+            else
+            {
+                db.Projects.ToList();
+            }
+        }
 
         [HttpGet]
         public IEnumerable<Projects> Get()
@@ -24,18 +52,6 @@ namespace Infinity_app.Controllers
         {
             Projects proj = db.Projects.FirstOrDefault(x => x.Id == id);
             return proj;
-        }
-
-        [HttpPut]
-        public IActionResult Put(Projects proj)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Projects.Add(proj);
-                db.SaveChanges();
-                return Ok(proj);
-            }
-            return BadRequest(ModelState);
         }
     }
 }

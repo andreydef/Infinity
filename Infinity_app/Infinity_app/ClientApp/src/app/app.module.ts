@@ -14,7 +14,7 @@ import { AboutComponent } from './components/about/about.component';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
