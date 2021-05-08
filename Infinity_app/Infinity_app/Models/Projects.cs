@@ -10,6 +10,8 @@ namespace Infinity_app.Models
 
         public string Title { get; set; }
 
+        [StringLength(maximumLength: 40, ErrorMessage = "Максимальна довжина введеної стрічки - 40 символів")]
+        [MaxLength(40)]
         public string Description { get; set; }
 
         [Required]

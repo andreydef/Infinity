@@ -20,6 +20,7 @@ namespace Infinity_app.Models
         public DbSet<Contact_me> Contact_me { get; set; }
         public DbSet<Contact_info> Contact_info { get; set; }
         public DbSet<Stats> Stats { get; set; }
+        public DbSet<Service_info> Service_info { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -40,6 +41,30 @@ namespace Infinity_app.Models
                     Skills_desc = "Lorem ipsum Qui veniam ut consequat ex ullamco nulla in non ut esse in magna sint minim officia consectetur nisi commodo ea magna pariatur nisi cillum."
                 }
             });
+            modelBuilder.Entity<Service_info>().HasData(new Service_info[]
+           {
+                new Service_info
+                {
+                    Id = 1,
+                    ImageName = "",
+                    Title = "Webdesign",
+                    Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsamvoluptatem quia voluptas sit aspernatur aut odit aut fugit."
+                },
+                new Service_info
+                {
+                    Id = 2,
+                    ImageName = "",
+                    Title = "Web Development",
+                    Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsamvoluptatem quia voluptas sit aspernatur aut odit aut fugit."
+                },
+                new Service_info
+                {
+                    Id = 3,
+                    ImageName = "",
+                    Title = "Branding",
+                    Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsamvoluptatem quia voluptas sit aspernatur aut odit aut fugit."
+                }
+           });
             modelBuilder.Entity<Languages>().HasData(new Languages[]
             {
                 new Languages
