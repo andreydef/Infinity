@@ -7,7 +7,7 @@ using Infinity_app.Models;
 
 namespace Infinity_app.Controllers
 {
-    [Route("api/projects")]
+    [Route("api/portfolio")]
     [ApiController]
     public class ProjectsController : ControllerBase
     {

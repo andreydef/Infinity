@@ -16,13 +16,5 @@ namespace Infinity_app.Models
         public string Short_desc { get; set; }
 
         public string ImageName { get; set; }
-
-        public string Link_facebook { get; set; }
-
-        public string Link_github { get; set; }
-
-        public string Link_twitter { get; set; }
-
-        public string Link_instagram { get; set; }
     }
 }

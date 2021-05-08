@@ -1,19 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { AboutService } from '../../services/about.service';
+import { LanguagesService } from '../../services/languages.service';
 import { About } from '../../models/About';
+import { Languages } from '../../models/Languages';
 
 @Component({
   selector: 'app-about',
   templateUrl: '../about/about.component.html',
   styleUrls: ['../about/about.component.css'],
-  providers: [ AboutService ]
+  providers: [ AboutService, LanguagesService ]
 })
 export class AboutComponent implements OnInit {
 
   about: About = new About();  // changed about
   abouts: About[];             // massif of abouts
 
-  constructor(private aboutService: AboutService) { }
+  language: Languages = new Languages();
+  languages: Languages[];
+
+  constructor(private aboutService: AboutService, private languagesService: LanguagesService) { }
 
   // get data with service
   loadAbouts() {
@@ -21,8 +26,14 @@ export class AboutComponent implements OnInit {
       .subscribe((data: About[]) => this.abouts = data);
   }
 
+  loadLanguages() {
+    this.languagesService.getLanguages()
+      .subscribe((data: Languages[]) => this.languages = data);
+  }
+
   ngOnInit() {
     this.loadAbouts(); // download data before the start of server
+    this.loadLanguages();
   }
 
   // cancel() {

@@ -5,7 +5,7 @@ import { Projects } from '../models/Projects';
 @Injectable()
 export class PortfolioService {
 
-  private url = 'api/project';
+  private url = 'api/portfolio';
 
   constructor(private http: HttpClient) {
   }

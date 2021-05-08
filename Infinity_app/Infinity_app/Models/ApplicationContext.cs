@@ -21,6 +21,7 @@ namespace Infinity_app.Models
         public DbSet<Contact_info> Contact_info { get; set; }
         public DbSet<Stats> Stats { get; set; }
         public DbSet<Service_info> Service_info { get; set; }
+        public DbSet<Links> Links { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -126,7 +127,7 @@ namespace Infinity_app.Models
                 {
                     Id = 1,
                     Title = "my latest works",
-                    Description = "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere",
+                    Description = "Test project",
                     Name_project = "Website Contrast",
                     Date_project = new DateTime(2020, 05, 15)
                 },
@@ -173,7 +174,21 @@ namespace Infinity_app.Models
                 {
                     Id = 1,
                     Title = "WHERE TO FIND ME",
-                    Short_desc = "1600 Amphitheatre Parkway Mountain View, CA 94043 US",
+                    Short_desc = "1600 Amphitheatre Parkway ",
+                    ImageName = "https://image.flaticon.com/icons/svg/126/126470.svg"
+                },
+                new Contact_info
+                {
+                    Id = 2,
+                    Title = "EMAIL ME AT",
+                    Short_desc = "someone@kardswebsite.com",
+                    ImageName = "https://image.flaticon.com/icons/svg/126/126470.svg"
+                },
+                new Contact_info
+                {
+                    Id = 3,
+                    Title = "CALL ME AT",
+                    Short_desc = "Phone: (+63) 555 1212",
                     ImageName = "https://image.flaticon.com/icons/svg/126/126470.svg"
                 }
             });
@@ -220,6 +235,17 @@ namespace Infinity_app.Models
                     ImageName = "https://image.flaticon.com/icons/svg/126/126486.svg",
                     Count = 7200,
                     Title = "Hours"
+                }
+            });
+            modelBuilder.Entity<Links>().HasData(new Links[]
+{
+                new Links
+                {
+                    Id = 1,
+                    Link_facebook = "https://www.facebook.com/profile.php?id=100009036657512",
+                    Link_github = "https://github.com/andreydef",
+                    Link_twitter = "https://twitter.com/Andriy346",
+                    Link_instagram = "https://www.instagram.com/_andriy_halelyuka_/"
                 }
             });
         }
