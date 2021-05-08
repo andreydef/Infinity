@@ -1,22 +1,25 @@
+<link rel="stylesheet" href="./assets/css/base.css">
+
 <header>
-  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white
-    border-bottom box-shadow mb-3">
-    <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">PortfolioApp</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse"
-        data-target=".navbar-collapse" aria-label="Toggle navigation"
-        [attr.aria-expanded]="isExpanded" (click)="toggle()">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
-        [ngClass]="{ show: isExpanded }">
-        <ul class="navbar-nav flex-grow">
-          <li class="nav-item" [routerLinkActive]="['link-active']"
-            [routerLinkActiveOptions]="{ exact: true }">
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
-          </li>
-        </ul>
+  <div class="row">
+    <div class="top-bar">
+      <a class="menu-toggle" href="#"><span>Menu</span></a>
+      <div class="logo">
+        <a href="/">Portfolio</a>
       </div>
+      <nav id="main-nav-wrap">
+        <ul class="main-navigation">
+          <li><a class="smoothscroll" href="#intro" title="">Home</a></li>
+          <li><a class="smoothscroll" href="#about" title="">About</a></li>
+<!--          <li><a class="smoothscroll" href="#resume" title="">Resume</a></li>-->
+<!--          <li><a class="smoothscroll" href="#portfolio" title="">Portfolio</a></li>-->
+<!--          <li><a class="smoothscroll" href="#stats" title="">Statistics</a></li>-->
+<!--          <li><a class="smoothscroll" href="#contact" title="">Contact</a></li>-->
+<!--          <li class="nav-item" [routerLinkActive]="['link-active']">-->
+<!--            <a class="nav-link" target="_blank" [routerLink]="['/projects']">Projects</a>-->
+<!--          </li>-->
+        </ul>
+      </nav>
     </div>
-  </nav>
+  </div>
 </header>
