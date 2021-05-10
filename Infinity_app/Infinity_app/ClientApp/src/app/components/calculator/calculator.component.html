@@ -1,0 +1,348 @@
+<div class="content-wrapper__inner clearfix">
+  <div class="breadcrumbs">
+    <nav class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+      <span class="hidden-xs">Ви тут:&nbsp;&nbsp;</span>
+      <span property="itemListElement" typeof="ListItem" class="breadcrumb-item">
+      <a property="item" typeof="WebPage" href="https://migo.com.ua/"><span property="name">Головна</span></a>
+    </span>
+      <span property="itemListElement" typeof="ListItem" class="breadcrumb-item active">
+        <span property="name">Калькулятор</span>
+      </span>
+    </nav>
+  </div>
+  <h1>Калькулятор</h1>
+  <blockquote class="drop-cap">
+    За допомогою цього калькулятора Ви зможете самостійно розрахувати вартість виконання мною Вашого проекту, але прошу
+    враховувати, що даний розрахунок не виступає публічною офертою і є попередньою оцінкою Ваших інвестицій!
+    <br>Остаточна вартість Вашого проекту затверджується після його узгодження.
+  </blockquote>
+  <div class="calculator">
+    <div class="steps row">
+      <div class="col-sm-5">
+        <div class="calc_result_wrap">
+          <div class="h5">Загальна вартість:</div>
+          <form action="https://formspree.io/web@migo.com.ua" method="POST" class="form_calculator">
+            <div class="calc_result">
+              <div class="price">
+                <span class="value h2">2 201</span>&nbsp;грн.
+              </div>
+            </div>
+            <hr>
+            <div class="calc_form_data input-group">
+              <input type="email" name="email" value="" placeholder="Ваш Email" class="margin-bottom-normal">
+              <input type="text" name="_gotcha" style="display:none">
+              <input type="submit" class="btn" value="Надіслати">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-sm-7">
+        <div class="row" id="opt_type">
+          <div class="col-sm-12">
+            <div class="h4 block-gray">Тип сайту</div>
+          </div>
+          <div class="col-lg-6 margin-bottom-small">
+            <input type="radio" class="tm-radio" name="type_site" id="type_site_12" checked="" value="12">
+            <label for="type_site_12" data-toggle="tooltip" data-placement="bottom" title="">Cайт-візитка</label>
+          </div>
+          <div class="col-lg-6 margin-bottom-small">
+            <input type="radio" class="tm-radio" name="type_site" id="type_site_13" value="13">
+            <label for="type_site_12" data-toggle="tooltip" data-placement="bottom" title="">Корпоративний сайт</label>
+          </div>
+          <div class="col-lg-6 margin-bottom-small">
+            <input type="radio" class="tm-radio" name="type_site" id="type_site_14" value="14">
+            <label for="type_site_12" data-toggle="tooltip" data-placement="bottom" title="">Інтернет-магазин</label>
+          </div>
+          <div class="col-lg-6 margin-bottom-small">
+            <input type="radio" class="tm-radio" name="type_site" id="type_site_28" value="28">
+            <label for="type_site_12" data-toggle="tooltip" data-placement="bottom" title="">Landing page</label>
+          </div>
+        </div>
+
+        <div class="row" id="opt_general">
+          <div class="col-sm-12">
+            <div class="h4 block-gray">Основні роботи</div>
+          </div>
+          <div class="col-lg-6 margin-bottom-normal">
+            <div class="text-uppercase text-bold margin-bottom-small">CMS</div>
+            <div class="choice">
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="cms_name" id="cms-wp_1.5" accesskeys="12-13-14-28"
+                       value="WordPress">
+                <label for="cms-wp_1.5">WordPress</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="cms_name" id="cms-oc_1.4" accesskeys="14"
+                       value="OpenCart 2.X">
+                <label for="cms-oc_1.4">OpenCart 2.X</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 margin-bottom-normal">
+            <div class="text-uppercase text-bold margin-bottom-small">Структура сайту</div>
+            <div class="choice">
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="structure_name" id="structure_1500" accesskeys="12-13-14-28"
+                       value="до 10 сторінок">
+                <label for="structure_1500">до 10 сторінок</label>
+              </div>
+              <div class="choice-item" style="display: none;">
+                <input type="radio" class="tm-radio" name="structure_name" id="structure_3500" accesskeys="13-14"
+                       value="до 50 сторінок">
+                <label for="structure_3500">до 50 сторінок</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="structure_name" id="structure_700" accesskeys="12-13-14-28"
+                       checked="" value="Надається клієнтом">
+                <label for="structure_700">Надається клієнтом</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 margin-bottom-normal">
+            <div class="text-uppercase text-bold margin-bottom-small">Верстання сайту</div>
+            <div class="choice">
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="makeup_name" id="makeup-adap_1.4" accesskeys="12-13-14-28"
+                       value="Адаптивна">
+                <label for="makeup-adap_1.4">Адаптивна</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="makeup_name" id="makeup-fix_1.2" accesskeys="12-13-14-28"
+                       value="Фіксована">
+                <label for="makeup-fix_1.2">Фіксована</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="makeup_name" id="makeup_1.1" accesskeys="12-13-14-28"
+                       checked="" value="Надається клієнтом">
+                <label for="makeup_1.1">Надається клієнтом</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="opt_geo">
+          <div class="col-sm-12">
+            <div class="h4 block-gray">Мови і геолокація</div>
+          </div>
+          <div class="col-lg-6 margin-bottom-normal">
+            <div class="text-uppercase text-bold margin-bottom-small">Мультимовність</div>
+            <div class="choice">
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="lang_name" id="lang_0" accesskeys="12-13-14-28" checked=""
+                       value="1 мова">
+                <label for="lang_0">1 мова</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="lang_name" id="lang_800" accesskeys="12-13-14-28"
+                       value="2 мови">
+                <label for="lang_800">2 мови</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="lang_name" id="lang_1200" accesskeys="12-13-14-28"
+                       value="3 мови">
+                <label for="lang_1200">3 мови</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="lang_name" id="lang_2200" accesskeys="12-13-14-28"
+                       value="4 мови">
+                <label for="lang_2200">4 мови</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 margin-bottom-normal">
+            <div class="text-uppercase text-bold margin-bottom-small">Геозалежність</div>
+            <div class="choice">
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="geodata_name" id="geodata_0" accesskeys="12-13-14-28"
+                       checked="" value="Немає">
+                <label for="geodata_0">Немає</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="geodata_name" id="geodata-hand_700" accesskeys="12-13-14-28"
+                       value="Встановлюється відвідувачем">
+                <label for="geodata-hand_700">Встановлюється відвідувачем</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="geodata_name" id="geodata-auto_1300" accesskeys="12-13-14-28"
+                       value="Визначається автоматично">
+                <label for="geodata-auto_1300">Визначається автоматично</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="opt_musthave">
+          <div class="col-sm-12">
+            <div class="h4 block-gray">Основний функціонал</div>
+          </div>
+          <div class="col-lg-6 margin-bottom-normal">
+            <div class="text-uppercase text-bold margin-bottom-small">Товари/послуги</div>
+            <div class="choice">
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="catalog_name" id="catalog_1700" accesskeys="13-14" checked=""
+                       value="до 50 позицій">
+                <label for="catalog_1700">до 50 позицій</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="catalog_name" id="catalog_2500" accesskeys="13-14"
+                       value="до 100 позицій">
+                <label for="catalog_2500">до 100 позицій</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="catalog_name" id="catalog_6500" accesskeys="13-14"
+                       value="до 3000 позицій">
+                <label for="catalog_6500">до 3000 позицій</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="catalog_name" id="catalog_12000" accesskeys="13-14"
+                       value="более 3000 позицій">
+                <label for="catalog_12000">более 3000 позицій</label>
+              </div>
+              <div class="choice-item">
+                <input type="checkbox" class="tm-checkbox" name="catalog_name" id="catalog-sort_500" accesskeys="13-14"
+                       checked="" value="Сортування">
+                <label for="catalog-sort_500">Сортування</label>
+              </div>
+              <div class="choice-item">
+                <input type="checkbox" class="tm-checkbox" name="catalog_name" id="catalog-filter_800"
+                       accesskeys="13-14" value="Фільтр">
+                <label for="catalog-filter_800">Фільтр</label>
+              </div>
+              <div class="choice-item">
+                <input type="checkbox" class="tm-checkbox" name="catalog_name" id="catalog-search_600"
+                       accesskeys="13-14" value="Пошук по каталогу">
+                <label for="catalog-search_600">Пошук по каталогу</label>
+              </div>
+              <div class="choice-item">
+                <input type="checkbox" class="tm-checkbox" name="catalog_name" id="catalog-price-list_500"
+                       accesskeys="12-13-14-28" value="Прайс-лист">
+                <label for="catalog-price-list_500">Прайс-лист</label>
+              </div>
+              <div class="choice-item">
+                <input type="checkbox" class="tm-checkbox" name="catalog_name" id="catalog-cart_1100" accesskeys="14"
+                       checked="" value="Корзина">
+                <label for="catalog-cart_1100">Корзина</label>
+              </div>
+              <div class="choice-item">
+                <input type="checkbox" class="tm-checkbox" name="catalog_name" id="catalog-privatarea_2040"
+                       accesskeys="13-14" value="Особистий кабінет">
+                <label for="catalog-privatarea_2040">Особистий кабінет</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 margin-bottom-normal">
+            <div class="text-uppercase text-bold margin-bottom-small">Форми на сайті</div>
+            <div class="choice">
+              <div class="choice-item">
+                <input type="checkbox" class="tm-checkbox" name="forms_name" id="forms-registeration_500"
+                       accesskeys="13-14" value="Реєстрація на сайті">
+                <label for="forms-registeration_500">Реєстрація на сайті</label>
+              </div>
+              <div class="choice-item">
+                <input type="checkbox" class="tm-checkbox" name="forms_name" id="forms-feedback_450"
+                       accesskeys="12-13-14-28" checked="" value="Зворотній зв'язок">
+                <label for="forms-feedback_450">Зворотній зв'язок</label>
+              </div>
+              <div class="choice-item">
+                <input type="checkbox" class="tm-checkbox" name="forms_name" id="forms-advisor_450" accesskeys="13-14"
+                       value="Онлайн-консультант">
+                <label for="forms-advisor_450">Онлайн-консультант</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 margin-bottom-normal">
+            <div class="text-uppercase text-bold margin-bottom-small">Зображення</div>
+            <div class="choice">
+              <div class="choice-item">
+                <input type="checkbox" class="tm-checkbox" name="visual_name" id="visual-slider_400"
+                       accesskeys="12-13-14-28" checked="" value="Слайдер">
+                <label for="visual-slider_400">Слайдер</label>
+              </div>
+              <div class="choice-item">
+                <input type="checkbox" class="tm-checkbox" name="visual_name" id="visual-baners_500" accesskeys="13-14"
+                       value="Банери">
+                <label for="visual-baners_500">Банери</label>
+              </div>
+              <div class="choice-item">
+                <input type="checkbox" class="tm-checkbox" name="visual_name" id="visual-porfolio_700"
+                       accesskeys="13-14" value="Фотогалерея/Портфоліо">
+                <label for="visual-porfolio_700">Фотогалерея/Портфоліо</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 margin-bottom-normal">
+            <div class="text-uppercase text-bold margin-bottom-small">Мультивалютність</div>
+            <div class="choice">
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="multicur_name" id="multicur_0" accesskeys="12-13-14-28"
+                       checked="" value="Не потрібна">
+                <label for="multicur_0">Не потрібна</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="multicur_name" id="multicur_650" accesskeys="14"
+                       value="2 валюти">
+                <label for="multicur_650">2 валюти</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" class="tm-radio" name="multicur_name" id="multicur_950" accesskeys="14"
+                       value="3 валюти">
+                <label for="multicur_950">3 валюти</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="opt_additional">
+          <div class="col-sm-12">
+            <div class="h4 block-gray">Додатковий функціонал</div>
+          </div>
+          <div class="col-sm-12 margin-bottom-normal">
+            <div class="text-uppercase text-bold margin-bottom-small">Соціальні мережі</div>
+            <div class="choice">
+              <div class="choice-item">
+                <input type="checkbox" class="tm-checkbox" name="social_name" id="social-buttons_400"
+                       accesskeys="12-13-14-28" value="Кнопки «Поширити», «Подобається» и т.д.">
+                <label for="social-buttons_400">Кнопки «Поширити», «Подобається» и т.д.</label>
+              </div>
+              <div class="choice-item">
+                <input type="checkbox" class="tm-checkbox" name="social_name" id="social-widget_700"
+                       accesskeys="12-13-14" value="Віджети соц.мереж">
+                <label for="social-widget_700">Віджети соц.мереж</label>
+              </div>
+              <div class="choice-item" style="display: none;">
+                <input type="checkbox" class="tm-checkbox" name="social_name" id="social-login_550" accesskeys="13-14"
+                       value="Авторизація через соц.мережі">
+                <label for="social-login_550">Авторизація через соц.мережі</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="opt_host">
+          <div class="col-sm-12">
+            <div class="h4 block-gray">Домен і хостинг</div>
+          </div>
+          <div class="col-lg-6 margin-bottom-normal">
+					<span class="choice-item">
+    					<input type="radio" class="tm-radio" name="host_name" id="host-nothing_350" checked="" value="Все есть">
+    					<label for="host-nothing_350">Все є</label>
+					</span>
+          </div>
+          <div class="col-lg-6 margin-bottom-normal">
+					<span class="choice-item">
+    					<input type="radio" class="tm-radio" name="host_name" id="host-hosting_2000" value="Хостинг (1 рік)">
+    					<label for="host-hosting_2000">Хостинг (1 рік)</label>
+					</span>
+          </div>
+          <div class="col-lg-6 margin-bottom-normal">
+					<span class="choice-item">
+    					<input type="radio" class="tm-radio" name="host_name" id="host-all_2500" value="Хостинг+Домен (1 рік)">
+    					<label for="host-all_2500">Хостинг+Домен (1 рік)</label>
+					</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

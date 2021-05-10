@@ -12,16 +12,14 @@ namespace Infinity_app.Models
         }
 
         public DbSet<About> About { get; set; }
-        public DbSet<Languages> Languages { get; set; }
-        public DbSet<Tags> Tags { get; set; }
-        public DbSet<Main_info> Main_info { get; set; }
         public DbSet<Projects> Projects { get; set; }
         public DbSet<Services> Services { get; set; }
+        public DbSet<Languages> Languages { get; set; }
         public DbSet<Contact_me> Contact_me { get; set; }
         public DbSet<Contact_info> Contact_info { get; set; }
-        public DbSet<Stats> Stats { get; set; }
         public DbSet<Service_info> Service_info { get; set; }
         public DbSet<Links> Links { get; set; }
+        public DbSet<Calculator> Calculator { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -43,7 +41,7 @@ namespace Infinity_app.Models
                 }
             });
             modelBuilder.Entity<Service_info>().HasData(new Service_info[]
-           {
+            {
                 new Service_info
                 {
                     Id = 1,
@@ -64,61 +62,6 @@ namespace Infinity_app.Models
                     ImageName = "",
                     Title = "Branding",
                     Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsamvoluptatem quia voluptas sit aspernatur aut odit aut fugit."
-                }
-           });
-            modelBuilder.Entity<Languages>().HasData(new Languages[]
-            {
-                new Languages
-                {
-                    Id = 1,
-                    Title = "HTML5",
-                    Raiting = 90
-                },
-                new Languages
-                {
-                    Id = 2,
-                    Title = "CSS3",
-                    Raiting = 85
-                },
-                new Languages
-                {
-                    Id = 3,
-                    Title = "JQUERY",
-                    Raiting = 70
-                },
-                new Languages
-                {
-                    Id = 4,
-                    Title = "PHP",
-                    Raiting = 95
-                },
-                new Languages
-                {
-                    Id = 5,
-                    Title = "WORDPRESS",
-                    Raiting = 75
-                }
-            });
-            modelBuilder.Entity<Tags>().HasData(new Tags[]
-            {
-                new Tags
-                {
-                    Id = 1,
-                    Title = "Website"
-                },
-                new Tags
-                {
-                    Id = 2,
-                    Title = "Bank"
-                }
-            });
-            modelBuilder.Entity<Main_info>().HasData(new Main_info[]
-            {
-                new Main_info
-                {
-                    Id = 1,
-                    Title = "Check Out Some of My Works.",
-                    Description = "Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.",
                 }
             });
             modelBuilder.Entity<Projects>().HasData(new Projects[]
@@ -192,53 +135,8 @@ namespace Infinity_app.Models
                     ImageName = "https://image.flaticon.com/icons/svg/126/126470.svg"
                 }
             });
-            modelBuilder.Entity<Stats>().HasData(new Stats[]
-            {
-                new Stats
-                {
-                    Id = 1,
-                    ImageName = "https://image.flaticon.com/icons/svg/126/126486.svg",
-                    Count = 1500,
-                    Title = "Projects completed"
-                },
-                new Stats
-                {
-                    Id = 2,
-                    ImageName = "https://image.flaticon.com/icons/svg/126/126486.svg",
-                    Count = 900,
-                    Title = "Happy clients"
-                },
-                new Stats
-                {
-                    Id = 3,
-                    ImageName = "https://image.flaticon.com/icons/svg/126/126486.svg",
-                    Count = 200,
-                    Title = "Awards received"
-                },
-                new Stats
-                {
-                    Id = 4,
-                    ImageName = "https://image.flaticon.com/icons/svg/126/126486.svg",
-                    Count = 120,
-                    Title = "Crazy Ideas"
-                },
-                new Stats
-                {
-                    Id = 5,
-                    ImageName = "https://image.flaticon.com/icons/svg/126/126486.svg",
-                    Count = 1500,
-                    Title = "Cofee Cups"
-                },
-                new Stats
-                {
-                    Id = 6,
-                    ImageName = "https://image.flaticon.com/icons/svg/126/126486.svg",
-                    Count = 7200,
-                    Title = "Hours"
-                }
-            });
             modelBuilder.Entity<Links>().HasData(new Links[]
-{
+            {
                 new Links
                 {
                     Id = 1,
@@ -246,6 +144,25 @@ namespace Infinity_app.Models
                     Link_github = "https://github.com/andreydef",
                     Link_twitter = "https://twitter.com/Andriy346",
                     Link_instagram = "https://www.instagram.com/_andriy_halelyuka_/"
+                }
+            });
+            modelBuilder.Entity<Calculator>().HasData(new Calculator[]
+            {
+                new Calculator
+                {
+                    Id = 1,
+                    Type = "test",
+                    CMS = "test",
+                    Struct = "test",
+                    Layout = "test",
+                    Language = "test",
+                    Geolocation = "test",
+                    Products = "test",
+                    Forms = "test",
+                    Image = "test",
+                    Money = "test",
+                    Socials = "test",
+                    Domen = "test"
                 }
             });
         }

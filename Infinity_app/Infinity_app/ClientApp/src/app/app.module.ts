@@ -2,10 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
@@ -15,10 +13,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 
+import { routing } from './app.routing';
+import { CalculatorComponent } from './components/calculator/calculator.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,
     HomeComponent,
     AboutComponent,
     PortfolioComponent,
@@ -26,15 +26,14 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
     ContactComponent,
     FooterComponent,
     HeaderComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' }
-    ])
+    routing
   ],
   providers: [],
   bootstrap: [ AppComponent ]
