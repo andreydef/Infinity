@@ -10,10 +10,10 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ServicesComponent } from './components/services/services.component';
-import { StatsComponent } from './components/stats/stats.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +23,10 @@ import { HeaderComponent } from './components/header/header.component';
     AboutComponent,
     PortfolioComponent,
     ServicesComponent,
-    StatsComponent,
     ContactComponent,
     FooterComponent,
     HeaderComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
