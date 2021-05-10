@@ -1,236 +1,425 @@
+/* ===================================================================
+ * Infinity - Main JS
+ *
+ * ------------------------------------------------------------------- */
+
 (function($) {
 
   "use strict";
 
-  /*---------------------------------------------------- */
+  var cfg = {
+      defAnimation   : "fadeInUp",    // default css animation
+      scrollDuration : 800,           // smoothscroll duration
+      mailChimpURL   : 'https://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e6957d85dc'
+    },
+
+    $WIN = $(window);
+
+
+  // Add the User Agent to the <html>
+  // will be used for IE10 detection (Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0))
+  var doc = document.documentElement;
+  doc.setAttribute('data-useragent', navigator.userAgent);
+
+
   /* Preloader
-  ------------------------------------------------------ */
-  $(window).load(function() {
-    // will first fade out the loading animation
-    $("#loader").fadeOut("slow", function() {
-      // will fade out the whole DIV that covers the website.
-      $("#preloader").delay(300).fadeOut("slow");
+   * -------------------------------------------------- */
+  var ssPreloader = function() {
+
+    $WIN.on('load', function() {
+
+      // force page scroll position to top at page refresh
+      $('html, body').animate({ scrollTop: 0 }, 'normal');
+
+      // will first fade out the loading animation
+      $("#loader").fadeOut("slow", function(){
+
+        // will fade out the whole DIV that covers the website.
+        $("#preloader").delay(300).fadeOut("slow");
+
+      });
     });
-  })
-
-  /*---------------------------------------------------- */
-  /* FitText Settings
-  ------------------------------------------------------ */
-  setTimeout(function() {
-    $('#intro h1').fitText(1, { minFontSize: '42px', maxFontSize: '84px' });
-  }, 100);
+  };
 
 
-  /*---------------------------------------------------- */
   /* FitVids
   ------------------------------------------------------ */
-  $(".fluid-video-wrapper").fitVids();
+  var ssFitVids = function() {
+    $(".fluid-video-wrapper").fitVids();
+  };
 
 
-  /*---------------------------------------------------- */
-  /* Owl Carousel
-  ------------------------------------------------------ */
-  $("#owl-slider").owlCarousel({
-    navigation: false,
-    pagination: true,
-    itemsCustom: [
-      [0, 1],
-      [700, 2],
-      [960, 3]
-    ],
-    navigationText: false
-  });
-
-  /*----------------------------------------------------- */
-  /* Alert Boxes
-  ------------------------------------------------------- */
-  $('.alert-box').on('click', '.close', function() {
-    $(this).parent().fadeOut(500);
-  });
-
-  /*----------------------------------------------------- */
-  /* Stat Counter
-  ------------------------------------------------------- */
-  var statSection = $("#stats"),
-    stats = $(".stat-count");
-
-  statSection.waypoint({
-    handler: function(direction) {
-      if (direction === "down") {
-
-        stats.each(function() {
-          var $this = $(this);
-
-          $({ Counter: 0 }).animate({ Counter: $this.text() }, {
-            duration: 4000,
-            easing: 'swing',
-            step: function(curValue) {
-              $this.text(Math.ceil(curValue));
-            }
-          });
-        });
-      }
-      // trigger once only
-      this.destroy();
-    },
-    offset: "90%"
-  });
-
-  /*---------------------------------------------------- */
   /*	Masonry
   ------------------------------------------------------ */
-  var containerProjects = $('#folio-wrapper');
+  var ssMasonryFolio = function() {
 
-  containerProjects.imagesLoaded(function() {
-    containerProjects.masonry({
-      itemSelector: '.folio-item',
-      resize: true
+    var containerBricks = $('.bricks-wrapper');
+
+    containerBricks.imagesLoaded( function() {
+      containerBricks.masonry( {
+        itemSelector: '.brick',
+        resize: true
+      });
     });
-  });
+  };
 
-  /*----------------------------------------------------*/
-  /*	Modal Popup
-  ------------------------------------------------------*/
-  $('.item-wrap a').magnificPopup({
-    type: 'inline',
-    fixedContentPos: false,
-    removalDelay: 300,
-    showCloseBtn: false,
-    mainClass: 'mfp-fade'
-  });
 
-  $(document).on('click', '.popup-modal-dismiss', function(e) {
-    e.preventDefault();
-    $.magnificPopup.close();
-  });
+  /*	Light Gallery
+  ------------------------------------------------------- */
+  var ssLightGallery = function() {
 
-  /*-----------------------------------------------------*/
-  /* Navigation Menu
- ------------------------------------------------------ */
-  var toggleButton = $('.menu-toggle'),
-    nav = $('.main-navigation');
-
-  // toggle button
-  toggleButton.on('click', function(e) {
-    e.preventDefault();
-    toggleButton.toggleClass('is-clicked');
-    nav.slideToggle();
-  });
-
-  // nav items
-  nav.find('li a').on("click", function() {
-    // update the toggle button
-    toggleButton.toggleClass('is-clicked');
-    // fadeout the navigation panel
-    nav.fadeOut();
-  });
-
-  /*---------------------------------------------------- */
-  /* Highlight the current section in the navigation bar
-  ------------------------------------------------------ */
-  var sections = $("section"),
-    navigation_links = $("#main-nav-wrap li a");
-
-  sections.waypoint({
-    handler: function(direction) {
-
-      var active_section;
-
-      active_section = $('section#' + this.element.id);
-
-      if (direction === "up") active_section = active_section.prev();
-
-      var active_link = $('#main-nav-wrap a[href="#' + active_section.attr("id") + '"]');
-
-      navigation_links.parent().removeClass("current");
-      active_link.parent().addClass("current");
-    },
-    offset: '25%'
-  });
-
-  /*---------------------------------------------------- */
-  /* Smooth Scrolling
-  ------------------------------------------------------ */
-  $('.smoothscroll').on('click', function(e) {
-
-    e.preventDefault();
-
-    var target = this.hash,
-      $target = $(target);
-
-    $('html, body').stop().animate({
-      'scrollTop': $target.offset().top
-    }, 800, 'swing', function() {
-      window.location.hash = target;
+    $('#folio-wrap').lightGallery({
+      showThumbByDefault: false,
+      hash: false,
+      selector: ".item-wrap"
     });
-  });
+  };
 
-  /*---------------------------------------------------- */
-  /*  Placeholder Plugin Settings
-  ------------------------------------------------------ */
-  $('input, textarea, select').placeholder()
 
-  /*---------------------------------------------------- */
-  /*	contact form
-  ------------------------------------------------------ */
+  /* Flexslider
+    * ------------------------------------------------------ */
+  var ssFlexSlider = function() {
 
-  /* local validation */
-  $('#contactForm').validate({
+    $WIN.on('load', function() {
 
-    /* submit via ajax */
-    submitHandler: function(form) {
+      $('#testimonial-slider').flexslider({
+        namespace: "flex-",
+        controlsContainer: "",
+        animation: 'slide',
+        controlNav: true,
+        directionNav: false,
+        smoothHeight: true,
+        slideshowSpeed: 7000,
+        animationSpeed: 600,
+        randomize: false,
+        touch: true,
+      });
 
-      var sLoader = $('#submit-loader');
+    });
 
-      $.ajax({
-        type: "POST",
-        url: "../sendEmail/sendEmail.php",
-        data: $(form).serialize(),
-        beforeSend: function() {
-          sLoader.fadeIn();
+  };
+
+
+  /* Carousel
+* ------------------------------------------------------ */
+  var ssOwlCarousel = function() {
+
+    $(".owl-carousel").owlCarousel({
+      nav: false,
+      loop: true,
+      margin: 50,
+      responsiveClass:true,
+      responsive: {
+        0:{
+          items:2,
+          margin: 20
         },
-        success: function(msg) {
-          // Message was sent
-          if (msg == 'OK') {
-            sLoader.fadeOut();
-            $('#message-warning').hide();
-            $('#contactForm').fadeOut();
-            $('#message-success').fadeIn();
-          }
-          // There was an error
-          else {
-            sLoader.fadeOut();
-            $('#message-warning').html(msg);
-            $('#message-warning').fadeIn();
-          }
+        400:{
+          items:3,
+          margin: 30
         },
-        error: function() {
-          sLoader.fadeOut();
-          $('#message-warning').html("Something went wrong. Please try again.");
-          $('#message-warning').fadeIn();
+        600:{
+          items:4,
+          margin: 40
+        },
+        1000:{
+          items:6
         }
+      }
+    });
+
+  };
+
+
+
+  /* Menu on Scrolldown
+ * ------------------------------------------------------ */
+  var ssMenuOnScrolldown = function() {
+
+    var menuTrigger = $('#header-menu-trigger');
+
+    $WIN.on('scroll', function() {
+
+      if ($WIN.scrollTop() > 150) {
+        menuTrigger.addClass('opaque');
+      }
+      else {
+        menuTrigger.removeClass('opaque');
+      }
+
+    });
+  };
+
+
+  /* OffCanvas Menu
+ * ------------------------------------------------------ */
+  var ssOffCanvas = function() {
+
+    var menuTrigger = $('#header-menu-trigger'),
+      nav             = $('#menu-nav-wrap'),
+      closeButton     = nav.find('.close-button'),
+      siteBody        = $('body'),
+      mainContents    = $('section, footer');
+
+    // open-close menu by clicking on the menu icon
+    menuTrigger.on('click', function(e){
+      e.preventDefault();
+      menuTrigger.toggleClass('is-clicked');
+      siteBody.toggleClass('menu-is-open');
+    });
+
+    // close menu by clicking the close button
+    closeButton.on('click', function(e){
+      e.preventDefault();
+      menuTrigger.trigger('click');
+    });
+
+    // close menu clicking outside the menu itself
+    siteBody.on('click', function(e){
+      if( !$(e.target).is('#menu-nav-wrap, #header-menu-trigger, #header-menu-trigger span') ) {
+        menuTrigger.removeClass('is-clicked');
+        siteBody.removeClass('menu-is-open');
+      }
+    });
+
+  };
+
+
+  /* Smooth Scrolling
+	* ------------------------------------------------------ */
+  var ssSmoothScroll = function() {
+
+    $('.smoothscroll').on('click', function (e) {
+      var target = this.hash,
+        $target    = $(target);
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      $('html, body').stop().animate({
+        'scrollTop': $target.offset().top
+      }, cfg.scrollDuration, 'swing').promise().done(function () {
+
+        // check if menu is open
+        if ($('body').hasClass('menu-is-open')) {
+          $('#header-menu-trigger').trigger('click');
+        }
+
+        window.location.hash = target;
+      });
+    });
+
+  };
+
+
+  /* Placeholder Plugin Settings
+	* ------------------------------------------------------ */
+  var ssPlaceholder = function() {
+    $('input, textarea, select').placeholder();
+  };
+
+
+  /* Alert Boxes
+  ------------------------------------------------------- */
+  var ssAlertBoxes = function() {
+
+    $('.alert-box').on('click', '.close', function() {
+      $(this).parent().fadeOut(500);
+    });
+
+  };
+
+
+  /* Animations
+	* ------------------------------------------------------- */
+  var ssAnimations = function() {
+
+    if (!$("html").hasClass('no-cssanimations')) {
+      $('.animate-this').waypoint({
+        handler: function(direction) {
+
+          var defAnimationEfx = cfg.defAnimation;
+
+          if ( direction === 'down' && !$(this.element).hasClass('animated')) {
+            $(this.element).addClass('item-animate');
+
+            setTimeout(function() {
+              $('body .animate-this.item-animate').each(function(ctr) {
+                var el       = $(this),
+                  animationEfx = el.data('animate') || null;
+
+                if (!animationEfx) {
+                  animationEfx = defAnimationEfx;
+                }
+
+                setTimeout( function () {
+                  el.addClass(animationEfx + ' animated');
+                  el.removeClass('item-animate');
+                }, ctr * 30);
+
+              });
+            }, 100);
+          }
+
+          // trigger once only
+          this.destroy();
+        },
+        offset: '95%'
       });
     }
-  });
 
-  /*----------------------------------------------------- */
-  /* Back to top
- ------------------------------------------------------- */
-  var pxShow = 300; // height on which the button will show
-  var fadeInTime = 400; // how slow/fast you want the button to show
-  var fadeOutTime = 400; // how slow/fast you want the button to hide
-  var scrollSpeed = 300; // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
+  };
 
-  // Show or hide the sticky footer button
-  jQuery(window).scroll(function() {
 
-    if (!($("#header-search").hasClass('is-visible'))) {
-      if (jQuery(window).scrollTop() >= pxShow) {
-        jQuery("#go-top").fadeIn(fadeInTime);
-      } else {
-        jQuery("#go-top").fadeOut(fadeOutTime);
+  /* Intro Animation
+	* ------------------------------------------------------- */
+  var ssIntroAnimation = function() {
+
+    $WIN.on('load', function() {
+
+      if (!$("html").hasClass('no-cssanimations')) {
+        setTimeout(function(){
+          $('.animate-intro').each(function(ctr) {
+            var el = $(this),
+              animationEfx = el.data('animate') || null;
+
+            if (!animationEfx) {
+              animationEfx = cfg.defAnimation;
+            }
+
+            setTimeout( function () {
+              el.addClass(animationEfx + ' animated');
+            }, ctr * 300);
+          });
+        }, 100);
       }
+    });
+
+  };
+
+
+  /* Contact Form
+   * ------------------------------------------------------ */
+  var ssContactForm = function() {
+
+    /* local validation */
+    $('#contactForm').validate({
+
+      /* submit via ajax */
+      submitHandler: function(form) {
+        var sLoader = $('#submit-loader');
+
+        $.ajax({
+          type: "POST",
+          url: "inc/sendEmail.php",
+          data: $(form).serialize(),
+
+          beforeSend: function() {
+            sLoader.fadeIn();
+          },
+          success: function(msg) {
+            // Message was sent
+            if (msg == 'OK') {
+              sLoader.fadeOut();
+              $('#message-warning').hide();
+              $('#contactForm').fadeOut();
+              $('#message-success').fadeIn();
+            }
+            // There was an error
+            else {
+              sLoader.fadeOut();
+              $('#message-warning').html(msg);
+              $('#message-warning').fadeIn();
+            }
+          },
+          error: function() {
+            sLoader.fadeOut();
+            $('#message-warning').html("Something went wrong. Please try again.");
+            $('#message-warning').fadeIn();
+          }
+        });
+      }
+
+    });
+  };
+
+
+  /* AjaxChimp
+	* ------------------------------------------------------ */
+  var ssAjaxChimp = function() {
+
+    $('#mc-form').ajaxChimp({
+      language: 'es',
+      url: cfg.mailChimpURL
+    });
+
+    // Mailchimp translation
+    //
+    //  Defaults:
+    //	 'submit': 'Submitting...',
+    //  0: 'We have sent you a confirmation email',
+    //  1: 'Please enter a value',
+    //  2: 'An email address must contain a single @',
+    //  3: 'The domain portion of the email address is invalid (the portion after the @: )',
+    //  4: 'The username portion of the email address is invalid (the portion before the @: )',
+    //  5: 'This email address looks fake or invalid. Please enter a real email address'
+
+    $.ajaxChimp.translations.es = {
+      'submit': 'Submitting...',
+      0: '<i class="fa fa-check"></i> We have sent you a confirmation email',
+      1: '<i class="fa fa-warning"></i> You must enter a valid e-mail address.',
+      2: '<i class="fa fa-warning"></i> E-mail address is not valid.',
+      3: '<i class="fa fa-warning"></i> E-mail address is not valid.',
+      4: '<i class="fa fa-warning"></i> E-mail address is not valid.',
+      5: '<i class="fa fa-warning"></i> E-mail address is not valid.'
     }
-  });
+
+  };
+
+
+  /* Back to Top
+	* ------------------------------------------------------ */
+  var ssBackToTop = function() {
+
+    var pxShow  = 500,         // height on which the button will show
+      fadeInTime  = 400,         // how slow/fast you want the button to show
+      fadeOutTime = 400,         // how slow/fast you want the button to hide
+      scrollSpeed = 300,         // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
+      goTopButton = $("#go-top")
+
+    // Show or hide the sticky footer button
+    $(window).on('scroll', function() {
+      if ($(window).scrollTop() >= pxShow) {
+        goTopButton.fadeIn(fadeInTime);
+      } else {
+        goTopButton.fadeOut(fadeOutTime);
+      }
+    });
+  };
+
+
+
+  /* Initialize
+	* ------------------------------------------------------ */
+  (function ssInit() {
+    ssPreloader();
+    ssFitVids();
+    ssMasonryFolio();
+    ssLightGallery();
+    ssFlexSlider();
+    ssOwlCarousel();
+    ssMenuOnScrolldown();
+    ssOffCanvas();
+    ssSmoothScroll();
+    ssPlaceholder();
+    ssAlertBoxes();
+    ssAnimations();
+    ssIntroAnimation();
+    ssContactForm();
+    ssAjaxChimp();
+    ssBackToTop();
+
+  })();
+
 
 })(jQuery);

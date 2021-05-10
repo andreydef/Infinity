@@ -13,6 +13,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FooterComponent } from './components/footer/footer.component';
     StatsComponent,
     ContactComponent,
     FooterComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

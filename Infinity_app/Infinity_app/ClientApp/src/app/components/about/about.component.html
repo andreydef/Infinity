@@ -1,59 +1,71 @@
-<section id="about" *ngFor="let a of abouts">
-  <div class="row section-intro">
-    <div class="col-twelve">
-      <h5>About</h5>
-      <h1>{{a?.title}}</h1>
-      <div class="intro-info">
-        <img src="../../../assets/images/profile-pic.jpg" alt="Profile Picture">
-        <p class="lead">{{a?.description}}</p>
+<section id="about">
+  <div class="row about-wrap">
+    <div class="col-full">
+      <div class="about-profile-bg"></div>
+      <div class="intro">
+        <h3 class="animate-this">About Us</h3>
+        <p class="lead animate-this"><span>Infinity</span> is a creative digital agency based in Manila, Philippines. We are composed of creative designers and experienced developers.</p>
       </div>
     </div>
   </div>
-
-  <div class="row about-content">
-    <div class="col-six tab-full">
-      <h3>Profile</h3>
-      <p>{{a?.profile_desc}}</p>
-      <ul class="info-list">
-        <li>
-          <strong>Fullname:</strong>
-          <span>{{a?.fullName}}</span>
-        </li>
-        <li>
-          <strong>Birth Date:</strong>
-          <span>{{a?.birth_date | date: 'MMM dd, yyyy'}}</span>
-        </li>
-        <li>
-          <strong>Job:</strong>
-          <span>{{a?.job}}</span>
-        </li>
-        <li>
-          <strong>Website:</strong>
-          <span>{{a?.website}}</span>
-        </li>
-        <li>
-          <strong>Email:</strong>
-          <span>{{a?.email}}</span>
-        </li>
-      </ul>
-    </div>
-
-    <div class="col-six tab-full">
-      <h3>Skills</h3>
-      <p>{{a?.skills_desc}}</p>
-      <ul class="skill-bars" *ngFor="let l of languages">
-        <li>
-          <div class="progress percent{{l?.raiting}}"><span>{{l?.raiting}}</span></div>
-          <strong>{{l?.title}}</strong>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="row button-section">
-    <div class="col-twelve">
-      <a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a>
-      <a href="#" title="Download CV" class="button button-primary">Download CV</a>
-    </div>
-  </div>
 </section>
+
+<!--<section id="about" *ngFor="let a of abouts">-->
+<!--  <div class="row section-intro">-->
+<!--    <div class="col-twelve">-->
+<!--      <h5>About</h5>-->
+<!--      <h1>{{a?.title}}</h1>-->
+<!--      <div class="intro-info">-->
+<!--        <img src="../../../assets/images/profile-pic.jpg" alt="Profile Picture">-->
+<!--        <p class="lead">{{a?.description}}</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="row about-content">-->
+<!--    <div class="col-six tab-full">-->
+<!--      <h3>Profile</h3>-->
+<!--      <p>{{a?.profile_desc}}</p>-->
+<!--      <ul class="info-list">-->
+<!--        <li>-->
+<!--          <strong>Fullname:</strong>-->
+<!--          <span>{{a?.fullName}}</span>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <strong>Birth Date:</strong>-->
+<!--          <span>{{a?.birth_date | date: 'MMM dd, yyyy'}}</span>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <strong>Job:</strong>-->
+<!--          <span>{{a?.job}}</span>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <strong>Website:</strong>-->
+<!--          <span>{{a?.website}}</span>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <strong>Email:</strong>-->
+<!--          <span>{{a?.email}}</span>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+
+<!--    <div class="col-six tab-full">-->
+<!--      <h3>Skills</h3>-->
+<!--      <p>{{a?.skills_desc}}</p>-->
+<!--      <ul class="skill-bars" *ngFor="let l of languages">-->
+<!--        <li>-->
+<!--          <div class="progress percent{{l?.raiting}}"><span>{{l?.raiting}}</span></div>-->
+<!--          <strong>{{l?.title}}</strong>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="row button-section">-->
+<!--    <div class="col-twelve">-->
+<!--      <a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a>-->
+<!--      <a href="#" title="Download CV" class="button button-primary">Download CV</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
