@@ -21,12 +21,8 @@ namespace Infinity_app.Controllers
                     new Contact_me
                     {
                         Id = 1,
-                        Title = "I'd Love To Hear From You.",
-                        Description = "Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.",
-                        Name = "Andriy",
-                        Email = "andriyhalelyuka@ukr.net",
-                        Subject = "Question",
-                        Message = "Do you have some React job's in you portfolio?"
+                        Title = "Get In Touch.",
+                        Description = "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi."
                     }
                     );
                 db.SaveChanges();
@@ -41,13 +37,6 @@ namespace Infinity_app.Controllers
         public IEnumerable<Contact_me> Get()
         {
             return db.Contact_me.ToList();
-        }
-
-        [HttpGet("{id}")]
-        public Contact_me Get(int id)
-        {
-            Contact_me contact_me = db.Contact_me.FirstOrDefault(x => x.Id == id);
-            return contact_me;
         }
     }
 }

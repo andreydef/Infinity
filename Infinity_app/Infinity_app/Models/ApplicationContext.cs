@@ -12,14 +12,10 @@ namespace Infinity_app.Models
         }
 
         public DbSet<About> About { get; set; }
-        public DbSet<Projects> Projects { get; set; }
-        public DbSet<Services> Services { get; set; }
-        public DbSet<Languages> Languages { get; set; }
         public DbSet<Contact_me> Contact_me { get; set; }
         public DbSet<Contact_info> Contact_info { get; set; }
-        public DbSet<Service_info> Service_info { get; set; }
         public DbSet<Links> Links { get; set; }
-        public DbSet<Calculator> Calculator { get; set; }
+        public DbSet<Contacts> Contacts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -28,74 +24,8 @@ namespace Infinity_app.Models
                 new About
                 {
                     Id = 1,
-                    Title = "Let me introduce myself.",
-                    ImageName = "",
-                    Description = "Lorem ipsum Exercitation culpa qui dolor consequat exercitation fugiat laborum ex ea eiusmod ad do aliqua occaecat nisi ad irure sunt id pariatur Duis laboris amet exercitation veniam labore consectetur ea id quis eiusmod.",
-                    Profile_desc = "Lorem ipsum Qui veniam ut consequat ex ullamco nulla in non ut esse in magna sint minim officia consectetur nisi commodo ea magna pariatur nisi cillum.	",
-                    FullName = "Juan Dela Cruz",
-                    Birth_date = new DateTime(1987, 05, 13),
-                    Job = "Freelancer, Frontend Developer",
-                    Website = "www.kardswebsite.com",
-                    Email = "me@kardswebsite.com",
-                    Skills_desc = "Lorem ipsum Qui veniam ut consequat ex ullamco nulla in non ut esse in magna sint minim officia consectetur nisi commodo ea magna pariatur nisi cillum."
-                }
-            });
-            modelBuilder.Entity<Service_info>().HasData(new Service_info[]
-            {
-                new Service_info
-                {
-                    Id = 1,
-                    ImageName = "",
-                    Title = "Webdesign",
-                    Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsamvoluptatem quia voluptas sit aspernatur aut odit aut fugit."
-                },
-                new Service_info
-                {
-                    Id = 2,
-                    ImageName = "",
-                    Title = "Web Development",
-                    Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsamvoluptatem quia voluptas sit aspernatur aut odit aut fugit."
-                },
-                new Service_info
-                {
-                    Id = 3,
-                    ImageName = "",
-                    Title = "Branding",
-                    Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsamvoluptatem quia voluptas sit aspernatur aut odit aut fugit."
-                }
-            });
-            modelBuilder.Entity<Projects>().HasData(new Projects[]
-            {
-                new Projects
-                {
-                    Id = 1,
-                    Title = "my latest works",
-                    Description = "Test project",
-                    Name_project = "Website Contrast",
-                    Date_project = new DateTime(2020, 05, 15)
-                },
-                new Projects
-                {
-                    Id = 2,
-                    Name_project = "Banking_system",
-                    Date_project = new DateTime(2020, 06, 05)
-                }
-            });
-            modelBuilder.Entity<Services>().HasData(new Services[]
-            {
-                new Services
-                {
-                    Id = 1,
-                    Title = "What Can I Do For You?",
-                    Short_desc = "Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.",
-                    Title_service = "Web Development",
-                    Description = "Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do."
-                },
-                new Services
-                {
-                    Id = 2,
-                    Title_service = "Web Development",
-                    Description = "Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do."
+                    Title = "ABOUT US",
+                    Description = "is a creative digital agency based in Manila, Philippines. We are composed of creative designers and experienced developers."
                 }
             });
             modelBuilder.Entity<Contact_me>().HasData(new Contact_me[]
@@ -103,12 +33,8 @@ namespace Infinity_app.Models
                 new Contact_me
                 {
                     Id = 1,
-                    Title = "I'd Love To Hear From You.",
-                    Description = "Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.",
-                    Name = "Andriy",
-                    Email = "andriyhalelyuka@ukr.net",
-                    Subject = "Question",
-                    Message = "Do you have some React job's in you portfolio?"
+                    Title = "Get In Touch.",
+                    Description = "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi."
                 }
             });
             modelBuilder.Entity<Contact_info>().HasData(new Contact_info[]
@@ -117,22 +43,19 @@ namespace Infinity_app.Models
                 {
                     Id = 1,
                     Title = "WHERE TO FIND ME",
-                    Short_desc = "1600 Amphitheatre Parkway ",
-                    ImageName = "https://image.flaticon.com/icons/svg/126/126470.svg"
+                    Short_desc = "1600 Amphitheatre Parkway "
                 },
                 new Contact_info
                 {
                     Id = 2,
                     Title = "EMAIL ME AT",
-                    Short_desc = "someone@kardswebsite.com",
-                    ImageName = "https://image.flaticon.com/icons/svg/126/126470.svg"
+                    Short_desc = "someone@kardswebsite.com"
                 },
                 new Contact_info
                 {
                     Id = 3,
                     Title = "CALL ME AT",
-                    Short_desc = "Phone: (+63) 555 1212",
-                    ImageName = "https://image.flaticon.com/icons/svg/126/126470.svg"
+                    Short_desc = "Phone: (+63) 555 1212"
                 }
             });
             modelBuilder.Entity<Links>().HasData(new Links[]
@@ -146,23 +69,15 @@ namespace Infinity_app.Models
                     Link_instagram = "https://www.instagram.com/_andriy_halelyuka_/"
                 }
             });
-            modelBuilder.Entity<Calculator>().HasData(new Calculator[]
+            modelBuilder.Entity<Contacts>().HasData(new Contacts[]
             {
-                new Calculator
+                new Contacts
                 {
                     Id = 1,
-                    Type = "test",
-                    CMS = "test",
-                    Struct = "test",
-                    Layout = "test",
-                    Language = "test",
-                    Geolocation = "test",
-                    Products = "test",
-                    Forms = "test",
-                    Image = "test",
-                    Money = "test",
-                    Socials = "test",
-                    Domen = "test"
+                    Name = "test",
+                    Email = "test@gmail.com",
+                    Subject = "test",
+                    Message = "test message"
                 }
             });
         }

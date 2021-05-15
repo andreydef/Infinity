@@ -22,7 +22,7 @@ namespace Infinity_app
 
         public void ConfigureServices(IServiceCollection services)
         {
-            string connectionString = "Data Source=DESKTOP-3FJ8FKE;Initial Catalog=Portfolio;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string connectionString = "Data Source=DESKTOP-3FJ8FKE;Initial Catalog=Infinity;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
 
             // services.AddControllers();

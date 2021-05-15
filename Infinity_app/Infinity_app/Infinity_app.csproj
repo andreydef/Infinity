@@ -33,29 +33,6 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="Migrations\20210504142503_First.cs" />
-    <Compile Remove="Migrations\20210504142503_First.Designer.cs" />
-    <Compile Remove="Migrations\20210504144320_Initial.cs" />
-    <Compile Remove="Migrations\20210504144320_Initial.Designer.cs" />
-    <Compile Remove="Migrations\20210504150237_Initial.cs" />
-    <Compile Remove="Migrations\20210504150237_Initial.Designer.cs" />
-    <Compile Remove="Migrations\20210504150628_First.cs" />
-    <Compile Remove="Migrations\20210504150628_First.Designer.cs" />
-    <Compile Remove="Migrations\20210508103500_Initial.cs" />
-    <Compile Remove="Migrations\20210508103500_Initial.Designer.cs" />
-    <Compile Remove="Migrations\20210508173906_First.cs" />
-    <Compile Remove="Migrations\20210508173906_First.Designer.cs" />
-    <Compile Remove="Migrations\20210508174535_Initial.cs" />
-    <Compile Remove="Migrations\20210508174535_Initial.Designer.cs" />
-    <Compile Remove="Migrations\20210508174656_Initial.cs" />
-    <Compile Remove="Migrations\20210508174656_Initial.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

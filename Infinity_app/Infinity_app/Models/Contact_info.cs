@@ -14,7 +14,5 @@ namespace Infinity_app.Models
 
         [Required]
         public string Short_desc { get; set; }
-
-        public string ImageName { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { About } from '../models/About';
 
 @Injectable()
 export class AboutService {
@@ -11,13 +10,5 @@ export class AboutService {
 
   getAbouts() {
     return this.http.get(this.url);
-  }
-
-  getAbout(id: number) {
-    return this.http.get(this.url + '/' + id);
-  }
-
-  updateAbout(about: About) {
-    return this.http.put(this.url, about);
   }
 }

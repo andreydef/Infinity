@@ -14,7 +14,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 
 import { routing } from './app.routing';
-import { CalculatorComponent } from './components/calculator/calculator.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +25,7 @@ import { CalculatorComponent } from './components/calculator/calculator.componen
     ContactComponent,
     FooterComponent,
     HeaderComponent,
-    TestimonialsComponent,
-    CalculatorComponent
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

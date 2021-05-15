@@ -38,24 +38,5 @@ namespace Infinity_app.Controllers
         {
             return db.Links.ToList();
         }
-
-        [HttpGet("{id}")]
-        public Links Get(int id)
-        {
-            Links links = db.Links.FirstOrDefault(x => x.Id == id);
-            return links;
-        }
-
-        [HttpPut]
-        public IActionResult Put(Links links)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Links.Add(links);
-                db.SaveChanges();
-                return Ok(links);
-            }
-            return BadRequest(ModelState);
-        }
     }
 }

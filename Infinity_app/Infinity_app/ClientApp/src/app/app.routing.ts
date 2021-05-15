@@ -7,7 +7,6 @@ import { ServicesComponent } from './components/services/services.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
-import { CalculatorComponent } from './components/calculator/calculator.component';
 
 const appRoutes: Routes = [
   {
@@ -22,12 +21,6 @@ const appRoutes: Routes = [
       { path: 'review', component: TestimonialsComponent }
     ],
     pathMatch: 'full'
-  },
-
-  // no layout routes
-  {
-    path: 'calculator',
-    component: CalculatorComponent,
   },
 
   // otherwise redirect to home

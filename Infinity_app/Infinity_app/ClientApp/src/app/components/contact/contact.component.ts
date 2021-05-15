@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 import { ContactInfo } from '../../models/Contact_info';
 import { ContactMe } from '../../models/Contact_me';
 import { ContactService } from '../../services/contact.service';
@@ -17,7 +19,12 @@ export class ContactComponent implements OnInit {
   contact_me: ContactMe = new ContactMe();
   contacts_me: ContactMe[];
 
-  constructor(private contactService: ContactService) { }
+  constructor(public contactService: ContactService) { }
+
+  ngOnInit() {
+    this.loadContactsInfo();
+    this.loadContactsMe();
+  }
 
   loadContactsInfo() {
     this.contactService.getContactsInfo()
@@ -29,8 +36,31 @@ export class ContactComponent implements OnInit {
       .subscribe((data: ContactMe[]) => this.contacts_me = data);
   }
 
-  ngOnInit() {
-    this.loadContactsInfo();
-    this.loadContactsMe();
+  insertRecord(form: NgForm) {
+    this.contactService.postContact().subscribe(
+      res => {
+        this.resetForm(form);
+        confirm('You question successfully send to admin');
+      }
+    );
+  }
+
+  onSubmit(form: NgForm) {
+    if (this.contactService.formData.id === 0) {
+      this.insertRecord(form);
+    }
+  }
+
+  resetForm(form?: NgForm) {
+    if (form != null) {
+      form.form.reset();
+    }
+    this.contactService.formData = {
+      id: 0,
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    };
   }
 }

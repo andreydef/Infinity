@@ -19,21 +19,18 @@
     </div>
   </div>
 
-  <ul class="home-social-list">
+  <ul class="home-social-list" *ngFor="let l of links">
     <li class="animate-intro">
-      <a href="#"><i class="fa fa-facebook-square"></i></a>
+      <a href="{{l?.link_facebook}}"><i class="fa fa-facebook-square"></i></a>
     </li>
     <li class="animate-intro">
-      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="{{l?.link_twitter}}"><i class="fa fa-twitter"></i></a>
     </li>
     <li class="animate-intro">
-      <a href="#"><i class="fa fa-instagram"></i></a>
+      <a href="{{l?.link_instagram}}"><i class="fa fa-instagram"></i></a>
     </li>
     <li class="animate-intro">
-      <a href="#"><i class="fa fa-behance"></i></a>
-    </li>
-    <li class="animate-intro">
-      <a href="#"><i class="fa fa-dribbble"></i></a>
+      <a href="{{l?.link_github}}"><i class="fa fa-github"></i></a>
     </li>
   </ul>
 
@@ -44,26 +41,3 @@
     </a>
   </div>
 </section>
-
-<!--<section id="intro">-->
-<!--  <div class="intro-overlay"></div>-->
-<!--  <div class="intro-content">-->
-<!--    <div class="row" *ngFor="let a of abouts">-->
-<!--      <div class="col-twelve">-->
-<!--        <h5>Hello, World.</h5>-->
-<!--        <h2>I'm {{a?.fullName}}</h2>-->
-<!--        <p class="intro-position" style="margin-bottom: 3rem;">-->
-<!--          <span>{{a?.job}}</span>-->
-<!--        </p>-->
-<!--        <a class="button stroke smoothscroll" href="#about" title="">More About Me</a>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--  <ul class="intro-social" *ngFor="let l of links">-->
-<!--    <li><a href="{{l?.link_facebook}}"><i class="fa fa-facebook" style="font-style: normal !important;"></i></a></li>-->
-<!--    <li><a href="{{l?.link_github}}"><i class="fa fa-github" style="font-style: normal !important;"></i></a></li>-->
-<!--    <li><a href="{{l?.link_twitter}}"><i class="fa fa-twitter" style="font-style: normal !important;"></i></a></li>-->
-<!--    <li><a href="{{l?.link_instagram}}"><i class="fa fa-instagram" style="font-style: normal !important;"></i></a></li>-->
-<!--  </ul>-->
-<!--</section>-->

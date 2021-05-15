@@ -10,35 +10,17 @@ import { About } from '../../models/About';
 })
 export class AboutComponent implements OnInit {
 
-  about: About = new About();  // changed about
-  abouts: About[];             // massif of abouts
+  about: About = new About();
+  abouts: About[];
 
   constructor(private aboutService: AboutService) { }
 
-  // get data with service
   loadAbouts() {
     this.aboutService.getAbouts()
       .subscribe((data: About[]) => this.abouts = data);
   }
 
   ngOnInit() {
-    this.loadAbouts(); // download data before the start of server
+    this.loadAbouts();
   }
-
-  // cancel() {
-    // this.about = new About();
-  // }
-
-  // save data
-  // save() {
-    // if (this.about.id != null) {
-      // this.aboutService.updateAbout(this.about)
-        // .subscribe((data => this.loadAbouts()));
-    // }
-    // this.cancel();
-  // }
-//
-  // editAbout(a: About) {
-    // this.about = a;
-  // }
 }
