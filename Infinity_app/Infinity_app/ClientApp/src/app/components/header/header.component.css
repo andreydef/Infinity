@@ -38,7 +38,6 @@ header .header-logo a {
   height: 27px;
   background: url("../../../assets/images/logo.png") no-repeat center;
   background-size: 57px 27px;
-  font: 0/0 a;
   text-shadow: none;
   color: transparent;
   -moz-transition: all 0.5s ease-in-out;
@@ -48,9 +47,9 @@ header .header-logo a {
   transition: all 0.5s ease-in-out;
 }
 
-/* -------------------------------------------------------------------
- * menu trigger - (_layout.css)
- * ------------------------------------------------------------------- */
+/*
+ * menu trigger
+*/
 #header-menu-trigger {
   display: block;
   position: fixed;
@@ -183,25 +182,24 @@ header .header-logo a {
 #menu-nav-wrap .nav-list li a:focus {
   color: white;
 }
-#menu-nav-wrap .header-social-list {
+#header-menu-trigger .header-social-list {
   list-style: none;
-  display: inline-block;
   margin: 0;
   font-size: 2.1rem;
 }
-#menu-nav-wrap .header-social-list li {
+#header-menu-trigger .header-social-list li {
+  display: inline-block;
   margin-right: 12px;
   padding-left: 0;
-  display: inline-block;
 }
-#menu-nav-wrap .header-social-list li a {
-  color: rgba(255, 255, 255, 0.15);
-}
-#menu-nav-wrap .header-social-list li a:hover,
-#menu-nav-wrap .header-social-list li a:focus {
+#header-menu-trigger .header-social-list li a {
   color: white;
 }
-#menu-nav-wrap .header-social-list li:last-child {
+#header-menu-trigger .header-social-list li a:hover,
+#header-menu-trigger .header-social-list li a:focus {
+  color: black;
+}
+#header-menu-trigger .header-social-list li:last-child {
   margin: 0;
 }
 #menu-nav-wrap .close-button {
@@ -213,7 +211,6 @@ header .header-logo a {
   position: absolute;
   top: 36px;
   right: 30px;
-  font: 0/0 a;
   text-shadow: none;
   color: transparent;
 }

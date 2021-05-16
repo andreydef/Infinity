@@ -9,7 +9,6 @@ import { LinksService } from '../../services/links.service';
   providers: [ LinksService ]
 })
 export class FooterComponent implements OnInit {
-
   link: Links = new Links();
   links: Links[];
 
