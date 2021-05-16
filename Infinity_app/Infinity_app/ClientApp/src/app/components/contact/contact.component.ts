@@ -12,11 +12,7 @@ import { ContactService } from '../../services/contact.service';
   providers: [ ContactService ]
 })
 export class ContactComponent implements OnInit {
-
-  contact_info: ContactInfo = new ContactInfo();
   contacts_info: ContactInfo[];
-
-  contact_me: ContactMe = new ContactMe();
   contacts_me: ContactMe[];
 
   constructor(public contactService: ContactService) { }
